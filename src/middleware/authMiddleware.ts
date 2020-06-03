@@ -1,3 +1,4 @@
+import { bot } from '../app';
 import { passportUrls } from '../enums/Urls';
 import { USER_STATUS } from '../enums/users/constants';
 import { passport } from '../services/passport';
@@ -8,6 +9,8 @@ import { match } from 'path-to-regexp';
 export const authMiddleware = async (ctx: any, next: any) => {
        await passport.authenticate('jwt', { session: false }, async (err: Error, user: any) => {
               if (err) {
+                     // bot usage example
+                     await bot.loggerTelegramBot(424558910, err);
                      throw err;
               }
 

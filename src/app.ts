@@ -4,6 +4,11 @@
 import { envIndex } from './services/env';
 envIndex(`${__dirname}/../`);
 
+import { BotTelegramLogger } from './bot/bot';
+// @err_log_test_bot
+const token = '1124506004:AAEmaiZmvvP_zeOz0TUmCJsDV5tCuQLByDM';
+export const bot = new BotTelegramLogger(token);
+
 import * as Koa from 'koa';
 import * as koaBody from 'koa-body';
 import * as Router from 'koa-router';

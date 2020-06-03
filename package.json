@@ -27,10 +27,10 @@
     "@types/koa-pug": "^4.0.0",
     "@types/node": "^12.12.31",
     "@types/nodemailer": "^6.4.0",
+    "@types/nodemailer-smtp-transport": "^2.7.4",
     "@types/passport-jwt": "^3.0.3",
     "@types/pug": "^2.0.4",
     "@types/validator": "^12.0.1",
-    "@types/nodemailer-smtp-transport": "^2.7.4",
     "backend-tslint-rules": "^1.14.0",
     "bcrypt": "^4.0.1",
     "dotenv": "^8.2.0",
@@ -54,6 +54,7 @@
     "sequelize": "^5.21.5",
     "sequelize-cli": "^5.5.1",
     "sequelize-typescript": "^1.1.0",
+    "telegraf": "^3.38.0",
     "tslint-config-airbnb": "^5.11.2"
   },
   "devDependencies": {
