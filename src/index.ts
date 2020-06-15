@@ -1,12 +1,10 @@
 import { Context, Telegraf } from 'telegraf';
-import { BaseModelService } from '../services/baseModel';
 
-export class BotTelegramLogger extends BaseModelService {
+class BotTelegramLogger {
 
     readonly bot: Telegraf<Context>;
 
     constructor(public token: string) {
-        super();
         this.bot = new Telegraf(token);
         this.bot.startPolling();
         this.bot.start(async ctx => {
@@ -15,9 +13,7 @@ export class BotTelegramLogger extends BaseModelService {
     }
 
     async loggerTelegramBot(chatId: number, error: any): Promise<void> {
-        const html = `<pre>${JSON.stringify(error.stack)}</pre>`;
-        await this.bot.telegram.sendMessage(chatId, html, {
-            parse_mode: 'HTML'
-        });
+        const data = JSON.stringify(error.stack);
+        await this.bot.telegram.sendMessage(chatId, data);
     }
 }
