@@ -1,7 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.TelegramBotLogger = void 0;
 const telegraf_1 = require("telegraf");
-class BotTelegramLogger {
+class TelegramBotLogger {
     constructor(token) {
         this.token = token;
         this.bot = new telegraf_1.Telegraf(token);
@@ -11,10 +12,9 @@ class BotTelegramLogger {
         });
     }
     async loggerTelegramBot(chatId, error) {
-        const data = JSON.stringify(error.stack);
+        const data = error.stack ? "\u{274C}\u{274C}\u{274C}" + JSON.stringify(error.stack) + "\u{274C}\u{274C}\u{274C}" : "\u{274C}\u{274C}\u{274C}" + JSON.stringify(error) + "\u{274C}\u{274C}\u{274C}";
         await this.bot.telegram.sendMessage(chatId, data);
     }
 }
-const token = '1124506004:AAEmaiZmvvP_zeOz0TUmCJsDV5tCuQLByDM';
-const bot = new BotTelegramLogger(token);
+exports.TelegramBotLogger = TelegramBotLogger;
 //# sourceMappingURL=index.js.map

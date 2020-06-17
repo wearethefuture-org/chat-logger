@@ -1,6 +1,6 @@
 import { Context, Telegraf } from 'telegraf';
 
-class BotTelegramLogger {
+export class TelegramBotLogger {
 
     readonly bot: Telegraf<Context>;
 
@@ -13,7 +13,7 @@ class BotTelegramLogger {
     }
 
     async loggerTelegramBot(chatId: number, error: any): Promise<void> {
-        const data = JSON.stringify(error.stack);
+        const data = error.stack ? "\u{274C}\u{274C}\u{274C}"+JSON.stringify(error.stack)+"\u{274C}\u{274C}\u{274C}" : "\u{274C}\u{274C}\u{274C}"+JSON.stringify(error)+"\u{274C}\u{274C}\u{274C}";
         await this.bot.telegram.sendMessage(chatId, data);
     }
 }
