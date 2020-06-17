@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2019",
+    "declaration": true,
     "noImplicitAny": true,
     "resolveJsonModule": true,
     "baseUrl": "./src",
@@ -10,7 +11,8 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": [
-    "./src/**/**/*"
+  "exclude": [
+    "node_modules",
+    "dist"
   ]
 }
