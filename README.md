@@ -1,5 +1,5 @@
 # telegram-bot-error-logger
-Backend for open social network
+This package will help you catch your project errors easier via telegram bot
 ## Get token for Telegram Bot
 At first, you need to go to Telegram and registration bot in BotFather (@BotFather).
 Here you`ll get a token for your bot.
